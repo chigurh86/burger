@@ -1,0 +1,19 @@
+<h1>Burgers To Devour</h1>
+<img src="../public/assets/img/burger.jpg" alt="">
+<ul>
+  {{#each burgers}}
+    <li>
+      <p>
+        {{this.id}}. {{this.burger_name}}
+
+        <form action="index.html" method="post">
+          <input type="text" name="id" value="{{this.id}}">
+        </form>
+        <form action="/{{this.id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="id" value="{{this.id}}">
+          <button type="submit">Delete</button>
+        </form>
+      </p>
+    </li>
+  {{/each}}
+</ul>
