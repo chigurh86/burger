@@ -19,10 +19,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(methodOverride("_method"));
 
-// app.get("/", function(req, res) {
-//   res.render("index", router)
-// });
+app.use(express.static(__dirname + "/public"));
+
 app.use("/", router);
+// app.use(express.static(process.cwd() + "/public"));
 app.listen(PORT, function() {
   console.log("App listening on PORT " + PORT);
 });

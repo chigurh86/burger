@@ -1,8 +1,11 @@
-INSERT INTO burgers (burger_name, devoured, date_created)
-VALUES ("Cheese Buger", 1, '2008-01-01 00:00:01');
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Cheese Buger", 1);
 
-INSERT INTO burgers (burger_name, devoured, date_created)
-VALUES ("Mushroom Buger", 0, '2008-01-01 00:00:01');
+INSERT INTO burgers (burger_name, devoured)
+VALUES ("Mushroom Buger", 0);
 
-INSERT INTO burgers (burger_name, devoured, date_created)
+INSERT INTO burgers (burger_name, devoured)
 VALUES ("Roasted Burger", 1 );
+
+INSERT INTO burgers (burger_name, devoured)
+VALUES ('Joe Biden Burger', true);

@@ -10,6 +10,7 @@ module.exports = function() {
       cb(res);
     });
 }
+
 //   insertOne (){
 //     const query = "SELECT * FROM ??";
 //     // connection.query("INSERT INTO burgers (burger_name) VALUES (?)",[req.body.burger_name], function(err, res) {
