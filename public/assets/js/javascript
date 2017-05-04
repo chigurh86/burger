@@ -1,0 +1,7 @@
+// $( document ).ready(function() {
+//   console.log("Hello");
+//   $(".burgerTime").click(function() {
+//     $(".burgerTime").hide()
+//     alert( "Handler for .click() called." );
+//   });
+// });

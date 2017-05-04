@@ -1,33 +1,25 @@
 <h1>Burgers To Devour</h1>
+<img src="assets/img/burger.jpg" height="200px" width="220px" alt="">
   {{#each burgers}}
-  <form class="theUpdateForm" action="/?_method=PUT" method="POST">
     <ul>
-      <li id="burgerTime">
-          <input type="hidden" name="id" value="{{this.id}}">
+      <form class="theUpdateForm" action="/{{this.id}}?_method=PUT" method="POST">
+      <li class="burgerTime">
+          <input type="hidden" name="id" value="1">
           <p><span class="label" name="burger-name">Burger:</span> {{this.burger_name}}</p>
           <p><span class="label" name="devoured">Devoured:</span> {{this.devoured}}</p>
-          <button id="eatButton" type="submit">Devour!</button>
+          <button type="submit">Devour!</button>
         </form>
           <form class="theDeleteForm" action="/{{this.id}}?_method=DELETE" method="POST">
             <input type="hidden" name="id">
             <button type="submit">Delete</button>
           </form>
       </li>
-
   </ul>
   {{/each}}
+
 
   <form class="form-group" action="/" method="POST">
     <label for="burg">Burger:</label>
     <input type="text" id="burg" name="burger" value="{{this.id}}">
     <button type="submit">Add Burger</button>
   </form>
-
-
-  <script type="text/javascript">
-  
-    $(this).click(function() {
-            $("#burgerTime").hide()
-      alert( "Handler for .click() called." );
-});
-  </script>

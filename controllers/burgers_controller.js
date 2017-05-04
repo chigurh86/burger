@@ -6,20 +6,22 @@ module.exports = function(app){
       res.render("index", {burgers:result});
     });
   });
-  app.put("/", function(req, res){
-    var data = orm.updateOne("burgers","devoured",1 ,"id",[req.body.id], function(req, result){
+
+  app.put("/:id", function(req, res){
+    var data = orm.updateOne("burgers","devoured","num", [req.params.id], function(req, result){
       res.redirect("/");
 			console.log(result);
     });
   });
-  app.post("/", function(req, res){
-    var data = orm.insertOne("burgers", "burger_name", [req.body.burger], function(req, result){
+
+  app.post("/:id", function(req, res){
+    var data = orm.insertOne("burgers", "burger_name", [req.params.id], [req.params.id], function(req, result){
       res.redirect("/");
       console.log(result);
     });
   });
   app.delete("/:id", function(req, res){
-    var data = orm.deleteOne("burgers", "burger_name", [req.params.id], function(req, result){
+    var data = orm.deleteOne("burgers", "id", [req.params.id], function(req, result){
       res.redirect("/");
       console.log(result);
     });

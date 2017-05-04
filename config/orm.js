@@ -16,16 +16,22 @@ var orm = {
       cb(res);
     });
   },
-  updateOne: function (table, updateCol, updateVal, selectorCol, selectorVal, cb){
-    var queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
-    connection.query(queryString, [table, updateCol, updateVal, selectorCol, selectorVal], function(err, res){
+  updateOne: function (table, devoured, num, idVal, cb){
+    var queryString = 'UPDATE' + table + 'SET' + devoured + '=' + num + 'WHERE ='+ idVal ;
+    connection.query(queryString, function(err, res){
       cb (res);
     });
   },
 
+  // UPDATE Customers
+  // SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
+  // WHERE CustomerID = 1;
+
+
+
   deleteOne: function(table, colName, idVal, cb){
-    var queryString = 'DELETE FROM `burgers` WHERE `id` = ?'
-    connection.query(queryString, 16, function(err, res) {
+    var queryString = 'DELETE FROM ' + table + ' WHERE '+ colName + ' = ' + idVal;
+    connection.query(queryString, function(err, res) {
           cb (res);
     });
   }
