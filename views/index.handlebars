@@ -2,8 +2,8 @@
 <img src="assets/img/burger.jpg" height="200px" width="220px" alt="">
   {{#each burgers}}
     <ul>
-      <form class="theUpdateForm" action="/{{this.id}}?_method=PUT" method="POST">
       <li class="burgerTime">
+        <form class="theUpdateForm" action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="id" value="1">
           <p><span class="label" name="burger-name">Burger:</span> {{this.burger_name}}</p>
           <p><span class="label" name="devoured">Devoured:</span> {{this.devoured}}</p>
