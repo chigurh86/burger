@@ -10,15 +10,18 @@ var orm = {
       cb(res);
     });
   },
-  insertOne: function (table, colName, nameVal, cb){
-    var queryString = "INSERT INTO ?? (??) VALUES (?)";
-    connection.query(queryString,[table, colName, nameVal], function(err, res){
+  insertOne: function (table, col, val, cb){
+    var queryString = `INSERT INTO ${table} (${col}) VALUES ('${val}')`
+    connection.query(queryString, function(err, res){
+      console.log(JSON.stringify(res));
       cb(res);
+
     });
   },
-  updateOne: function (table, devoured, num, idVal, cb){
-    var queryString = 'UPDATE' + table + 'SET' + devoured + '=' + num + 'WHERE ='+ idVal ;
+  updateOne: function (table, col, idVal, cb){
+    var queryString = 'UPDATE ' + table + ' SET ' + col + ' = 1 WHERE id = '+ idVal ;
     connection.query(queryString, function(err, res){
+      console.log(res);
       cb (res);
     });
   },

@@ -1,7 +1,30 @@
+<div class="container">
 <h1>Burgers To Devour</h1>
 <img src="assets/img/burger.jpg" height="200px" width="220px" alt="">
+
+<ul id="rightside">
+{{#each burgers}}
+{{#if this.devoured}}
+
+    <li>
+      <form class="theUpdateForm" action="/{{this.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="id" value="1">
+        <p><span class="label" name="burger-name">Burger:</span> {{this.burger_name}}</p>
+        <p><span class="label" name="devoured">Devoured:</span> {{this.devoured}}</p>
+        <button type="submit">Devour!</button>
+      </form>
+        <form class="theDeleteForm" action="/{{this.id}}?_method=DELETE" method="POST">
+          <input type="hidden" name="id">
+          <button type="submit">Delete</button>
+        </form>
+    </li>
+
+{{/if}}
+{{/each}}
+</ul>
+<ul id="leftside">
   {{#each burgers}}
-    <ul>
+  {{#unless this.devoured}}
       <li class="burgerTime">
         <form class="theUpdateForm" action="/{{this.id}}?_method=PUT" method="POST">
           <input type="hidden" name="id" value="1">
@@ -14,12 +37,13 @@
             <button type="submit">Delete</button>
           </form>
       </li>
-  </ul>
+  {{/unless}}
   {{/each}}
-
+</ul>
 
   <form class="form-group" action="/" method="POST">
     <label for="burg">Burger:</label>
     <input type="text" id="burg" name="burger" value="{{this.id}}">
     <button type="submit">Add Burger</button>
   </form>
+</div>

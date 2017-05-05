@@ -8,14 +8,14 @@ module.exports = function(app){
   });
 
   app.put("/:id", function(req, res){
-    var data = orm.updateOne("burgers","devoured","num", [req.params.id], function(req, result){
+    var data = orm.updateOne("burgers", "devoured", [req.params.id], function(req, result){
       res.redirect("/");
 			console.log(result);
     });
   });
 
-  app.post("/:id", function(req, res){
-    var data = orm.insertOne("burgers", "burger_name", [req.params.id], [req.params.id], function(req, result){
+  app.post("/", function(req, res){
+    var data = orm.insertOne("burgers","burger_name", [req.body.burger], function(req, result){
       res.redirect("/");
       console.log(result);
     });
