@@ -1,19 +1,21 @@
 body{
-  background-color: #ffff00 !important;
+  background-color:#ffff00;
 }
-.container{
-  margin: 0 auto;
-  text-align: center;
+.bottom{
+  margin: 10px;
+  color: white;
+  width: 100px
+}
+img{
+  margin-bottom: 30px;
 }
 ul{
-  display:block;
+  list-style: none;
 }
-#rightside{
-  float: right;
+span.label{
+  color: black;
+  font-size: 15px;
 }
-#leftside{
-  float: left;
-}
-.form-group{
-  padding-top: 10px;
+li{
+  margin-bottom:  30px;
 }
